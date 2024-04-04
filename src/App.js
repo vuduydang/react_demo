@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
+import ComponentA from './components/ComponentA';
+import ComponentB from './components/ComponentB';
+import componentA from "./components/ComponentA";
+import componentB from "./components/ComponentB";
 
 function App() {
+    const [showComponentA, setShowComponentA] = useState(true);
+    const [showComponentB, setShowComponentB] = useState(false);
+
+    const toggleComponentA = () => {
+        setShowComponentA(!showComponentA);
+        setShowComponentB(!showComponentB);
+    };
+    const toggleComponentB = () => {
+        setShowComponentA(!showComponentA);
+        setShowComponentB(!showComponentB);
+    };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          <ComponentA toggleComponentB={toggleComponentB} show={showComponentA} />
+          <ComponentB toggleComponentA={toggleComponentA} show={showComponentB} />
+      </div>
   );
 }
 
