@@ -1,6 +1,8 @@
 .App {
     text-align: center;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .App-logo {
@@ -56,42 +58,42 @@
 
 @-webkit-keyframes moveToLeft {
     from {
-        display: block;
+        z-index: 2;
     }
     to {
         -webkit-transform: translateX(-100%);
-        display: none;
+        z-index: 1;
     }
 }
 
 @keyframes moveToLeft {
     from {
-        display: block;
+        z-index: 2;
     }
     to {
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
-        display: none;
+        z-index: 1;
     }
 }
 
 @-webkit-keyframes moveToRight {
     from {
-        display: block;
+        z-index: 2;
     }
     to {
         -webkit-transform: translateX(100%);
-        display: none;
+        z-index: 1;
     }
 }
 
 @keyframes moveToRight {
     from {
-        display: block;
+        z-index: 2;
     }
     to {
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
-        display: none;
+        z-index: 1;
     }
 }
